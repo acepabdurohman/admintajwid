@@ -1,0 +1,36 @@
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        format_sql: true
+        connection:
+          characterEncoding: utf-8
+          CharSet: utf-8
+          useUnicode: true
+
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: false
+  #queries:
+    #users-query: SELECT username, password, active FROM user where username=?
+    #roles-query: SELECT u.username, r.authority FROM user u INNER JOIN user_role ur on(u.id=ur.user_id) INNER JOIN authority r on(ur.role_id=r.id) where u.username=?
+  profiles:
+    #active: pcf
+    #active: heroku
+    active: local
+  application:
+    name: admin-tajwid
+  jackson:
+    serialization:
+      indent_output: true
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+server:
+  port: 5566

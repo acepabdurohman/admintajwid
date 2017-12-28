@@ -1,0 +1,7 @@
+---
+applications:
+- name: admin-tajwid
+  memory: 1024M
+  instances: 1
+  host: admin-tajwid-${random-word}
+  path: target/admin-tajwid-0.0.1-SNAPSHOT.jar
