@@ -19,7 +19,7 @@ public class IndexController {
     @Autowired
     private UserService userService;
 
-    @GetMapping(value = "/index")
+    @GetMapping(value = {"/", "/index"})
     public ModelAndView index() {
         ModelAndView modelAndView = new ModelAndView();
         //Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

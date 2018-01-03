@@ -19,9 +19,9 @@ spring:
     #users-query: SELECT username, password, active FROM user where username=?
     #roles-query: SELECT u.username, r.authority FROM user u INNER JOIN user_role ur on(u.id=ur.user_id) INNER JOIN authority r on(ur.role_id=r.id) where u.username=?
   profiles:
-    #active: pcf
+    active: pcf
     #active: heroku
-    active: local
+    #active: local
   application:
     name: admin-tajwid
   jackson:

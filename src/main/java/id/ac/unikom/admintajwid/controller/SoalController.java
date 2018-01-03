@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -21,7 +22,7 @@ public class SoalController {
     private SoalService soalService;
 
     @GetMapping(value = "/admin/soal/{action}/{id}")
-    public String findByIdSoal(@PathVariable("action") String action, @PathVariable("id") Integer id,
+    public String findByIdSoal(@PathVariable("action") String action, @PathVariable("id") Integer id ,
                                RedirectAttributes redirectAttributes, Model model){
         if(action.equals("edit")){
             Soal soal = soalService.findById(id);
@@ -31,7 +32,7 @@ public class SoalController {
         else if(action.equals("delete")){
             soalService.delete(id);
             redirectAttributes.addFlashAttribute("deleteResult", "success");
-            return "redirect:/index";
+            return "redirect:/";
         }
         return null;
     }
@@ -54,7 +55,7 @@ public class SoalController {
                        RedirectAttributes redirectAttributes) throws Exception{
         soalService.save(soal, filePertanyaan, fileJawaban1, fileJawaban2, fileJawaban3, fileJawaban4);
         redirectAttributes.addFlashAttribute("saveResult", "success");
-        return "redirect:/index";
+        return "redirect:/";
     }
 
     @GetMapping(value = "/soal/api/lists")

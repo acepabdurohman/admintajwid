@@ -17,7 +17,12 @@ import java.util.HashSet;
 
 @Service
 public class UserServiceImpl implements UserService {
-
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private AuthorityRepository authorityRepository;
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
     private final AccountStatusUserDetailsChecker detailsChecker = new AccountStatusUserDetailsChecker();
 
     @Override
@@ -25,18 +30,6 @@ public class UserServiceImpl implements UserService {
         User user = userRepository.findByUsername(username);
         detailsChecker.check(user);
         return user;
-    }
-
-    @Autowired
-    private UserRepository userRepository;
-    @Autowired
-    private AuthorityRepository authorityRepository;
-    @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
-
-    @Override
-    public User findUserByUsername(String username) {
-        return userRepository.findByUsername(username);
     }
 
     @Override

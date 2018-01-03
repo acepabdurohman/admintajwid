@@ -14,7 +14,7 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
-    @GetMapping(value = {"/", "/login"})
+    @GetMapping(value = "/login")
     public ModelAndView login(){
         userService.save();
         ModelAndView modelAndView = new ModelAndView();
