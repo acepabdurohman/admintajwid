@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Admin Page</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <!-- BOOTSTRAP CORE STYLE  -->
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/bootstrap.css}"/>
+    <!-- FONT AWESOME ICONS  -->
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/font-awesome.css}"/>
+    <!-- CUSTOM STYLE  -->
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}"/>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+</head>
+
+<body>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <strong>Email: </strong>info@yourdomain.com
+                &nbsp;&nbsp;
+                <strong>Support: </strong>+90-897-678-44
+            </div>
+
+        </div>
+    </div>
+</header>
+<!-- HEADER END-->
+<div class="navbar navbar-inverse set-radius-zero">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" th:href="@{/}">
+
+                <!--<img th:src="@{/assets/img/logo.png}"/>-->
+                <h3>APLIKASI MANAGEMENT SOAL TAJWID</h3>
+            </a>
+
+        </div>
+
+        <div class="left-div">
+            <div class="user-settings-wrapper">
+                <ul class="nav">
+
+                    <li class="dropdown">
+
+                        <div class="dropdown-menu dropdown-settings">
+                            <div class="media">
+                                <a class="media-left" href="#">
+                                    <img th:src="@{/assets/img/64-64.jpg}" alt="" class="img-rounded"/>
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Jhon Deo Alex </h4>
+                                    <h5>Developer & Designer</h5>
+                                </div>
+                            </div>
+                            <hr/>
+                            <h5><strong>Personal Bio : </strong></h5>
+                            Anim pariatur cliche reprehen derit.
+                            <hr/>
+                            <a href="#" class="btn btn-info btn-sm">Full Profile</a>&nbsp; <a th:href="@{/login}"
+                                                                                              class="btn btn-danger btn-sm">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- LOGO HEADER END-->
+<section class="menu-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="navbar-collapse collapse ">
+                    <ul id="menu-top" class="nav navbar-nav navbar-right">
+                        <li><a class="menu-top-active" th:href="@{/}">Dashboard</a></li>
+
+                        <li><a th:href="@{/logout}">Logout</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- MENU SECTION END-->
+<div class="content-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="page-head-line">FORM CREATE DATA SOAL</h4>
+            </div>
+        </div>
+        <div class="row">
+            <form th:object="${soal}" th:action="@{/admin/soal/save}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
+                <div class="col-md-6 col-sm-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            Master Soal
+                        </div>
+                        <div class="panel-body">
+                            <label>Soal : </label>
+                            <textarea rows="5" class="form-control" th:field="*{pertanyaan}"
+                                      placeholder="Masukan Soal"></textarea>
+                            <input type="file" name="filePertanyaan"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            Detail Pilihan Jawaban
+                        </div>
+                        <div class="panel-body">
+                            <label>Pilihan Jawaban : </label>
+                            <input type="text" class="form-control" th:field="*{pilihanJawabans[0].pilihan}"
+                                   placeholder="Pilihan Jawaban 1" style="margin-bottom: 10px" required/>
+                            <input type="file" name="fileJawaban1"/>
+                            <input type="radio" name="salahbenar0" value="1"
+                                   th:checked="*{pilihanJawabans[0].apakahBenar}"
+                                   th:field="*{pilihanJawabans[0].apakahBenar}"/>Benar
+                            <input type="radio" name="salahbenar0" value="0"
+                                   th:checked="*{pilihanJawabans[0].apakahBenar == false}"
+                                   th:field="*{pilihanJawabans[0].apakahBenar}"/>Salah
+                            <hr/>
+
+                            <input type="text" class="form-control" th:field="*{pilihanJawabans[1].pilihan}"
+                                   placeholder="Pilihan Jawaban 2" style="margin-bottom: 10px" required/>
+                            <input type="file" name="fileJawaban2"/>
+                            <input type="radio" name="salahbenar1" value="1"
+                                   th:checked="*{pilihanJawabans[1].apakahBenar}"
+                                   th:field="*{pilihanJawabans[1].apakahBenar}"/>Benar
+                            <input type="radio" name="salahbenar1" value="0"
+                                   th:checked="*{pilihanJawabans[1].apakahBenar == false}"
+                                   th:field="*{pilihanJawabans[1].apakahBenar}"/>Salah
+                            <hr/>
+
+                            <input type="text" class="form-control" th:field="*{pilihanJawabans[2].pilihan}"
+                                   placeholder="Pilihan Jawaban 3" style="margin-bottom: 10px" required/>
+                            <input type="file" name="fileJawaban3"/>
+                            <input type="radio" name="salahbenar2" value="1"
+                                   th:checked="*{pilihanJawabans[2].apakahBenar}"
+                                   th:field="*{pilihanJawabans[2].apakahBenar}"/>Benar
+                            <input type="radio" name="salahbenar2" value="0"
+                                   th:checked="*{pilihanJawabans[2].apakahBenar == false}"
+                                   th:field="*{pilihanJawabans[2].apakahBenar}"/>Salah
+                            <hr/>
+
+                            <input type="text" class="form-control" th:field="*{pilihanJawabans[3].pilihan}"
+                                   placeholder="Pilihan Jawaban 4" style="margin-bottom: 10px" required/>
+                            <input type="file" name="fileJawaban4"/>
+                            <input type="radio" name="salahbenar3" value="1"
+                                   th:checked="*{pilihanJawabans[3].apakahBenar}"
+                                   th:field="*{pilihanJawabans[3].apakahBenar}"/>Benar
+                            <input type="radio" name="salahbenar3" value="0"
+                                   th:checked="*{pilihanJawabans[3].apakahBenar == false}"
+                                   th:field="*{pilihanJawabans[3].apakahBenar}"/>Salah
+                            <hr/>
+
+                            <input type="submit" class="btn btn-primary" value="Save"
+                                   style="float: right; margin-left: 10px;">
+                            <input type="reset" class="btn btn-default" value="Reset" style="float: right;">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- CONTENT-WRAPPER SECTION END-->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                &copy; 2015 YourCompany | By : <a href="http://www.designbootstrap.com/"
+                                                  target="_blank">DesignBootstrap</a>
+            </div>
+
+        </div>
+    </div>
+</footer>
+<!-- FOOTER SECTION END-->
+<!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+<!-- CORE JQUERY SCRIPTS -->
+<script th:src="@{/assets/js/jquery-1.11.1.js}"></script>
+<!-- BOOTSTRAP SCRIPTS  -->
+<script th:src="@{/assets/js/bootstrap.js}"></script>
+</body>
+</html>
