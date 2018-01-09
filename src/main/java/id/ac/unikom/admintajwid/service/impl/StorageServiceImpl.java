@@ -42,6 +42,7 @@ public class StorageServiceImpl implements StorageService {
         if (!isExist) {
             minioClient.makeBucket(bucketKuis);
         }
-        return minioClient.presignedGetObject(bucketKuis, namaFile, 60 * 60 * 24);
+        /*return minioClient.presignedGetObject(bucketKuis, namaFile, 60 * 60 * 24);*/
+        return minioClient.presignedGetObject(bucketKuis, namaFile);
     }
 }
