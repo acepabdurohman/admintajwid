@@ -196,10 +196,11 @@
 
                                                     <h3 th:text="${soal.getPertanyaan()}" style="color: blue;
                                                     margin-bottom: 20px"></h3>
-                                                    <div th:if="${soal.getFile()} != null AND ${soal.getContentType()} == 'image/png'">
+                                                    <div th:if="${soal.getFile()} != null AND ${soal.getContentType()} == 'image/png' ">
                                                         <img th:src="${soal.getFile()}" th:width="100px" th:height="100px"/>
                                                     </div>
-                                                    <div th:if="${soal.getFile()} != null AND ${soal.getContentType()} == 'audio/mp3'">
+                                                    <div th:if="${soal.getFile()} != null AND ${soal.getContentType()} == 'audio/mp3'
+                                                    OR ${soal.getContentType()} == 'audio/mpeg'">
                                                         <audio controls>
                                                             <source th:src="${soal.getFile()}" type="audio/mp3">
                                                         </audio>
@@ -212,7 +213,8 @@
                                                             <img th:src="${pilihanJawaban.getFile()}" th:width="100px" th:height="100px"/>
                                                         </div>
                                                         <div th:if="${pilihanJawaban.getFile()} != null AND
-                                                            ${pilihanJawaban.getContentType()} == 'audio/mp3'">
+                                                            ${pilihanJawaban.getContentType()} == 'audio/mp3'
+                                                            OR ${soal.getContentType()} == 'audio/mpeg'">
                                                             <audio controls>
                                                                 <source th:src="${pilihanJawaban.getFile()}" type="audio/mp3">
                                                             </audio>
