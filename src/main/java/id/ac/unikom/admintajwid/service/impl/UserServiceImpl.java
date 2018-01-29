@@ -23,6 +23,7 @@ public class UserServiceImpl implements UserService {
     private AuthorityRepository authorityRepository;
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
+
     private final AccountStatusUserDetailsChecker detailsChecker = new AccountStatusUserDetailsChecker();
 
     @Override
@@ -48,5 +49,14 @@ public class UserServiceImpl implements UserService {
             user.setAuthorities(new HashSet<>(Arrays.asList(authority)));
             userRepository.save(user);
         }
+    }
+
+    @Override
+    public User sendEmail(User user) {
+        User currentUser = userRepository.findByUsername(user.getUsername());
+        if(currentUser == null){
+            return currentUser;
+        }
+        return currentUser;
     }
 }

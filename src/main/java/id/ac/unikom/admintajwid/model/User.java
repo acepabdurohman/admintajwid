@@ -8,6 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.Collection;
 import java.util.Set;
 
@@ -20,6 +21,7 @@ public class User implements UserDetails{
     private Integer id;
 
     @NotEmpty(message = "*Please provide a username")
+    @Size(min = 1, max = 50)
     private String username;
 
     @Length(min = 5, message = "*Your password must have at least 5 characters")
@@ -27,9 +29,11 @@ public class User implements UserDetails{
     private String password;
 
     @NotEmpty(message = "*Please provide your name")
+    @Size(min = 1, max = 50)
     private String firstName;
 
     @NotEmpty(message = "*Please provide your last name")
+    @Size(min = 1, max = 50)
     private String lastName;
 
     private int active;

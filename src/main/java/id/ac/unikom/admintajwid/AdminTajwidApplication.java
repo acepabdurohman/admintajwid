@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class AdminTajwidApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AdminTajwidApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(AdminTajwidApplication.class, args);
+    }
 }

@@ -7,4 +7,5 @@ public interface UserService extends UserDetailsService {
 
     void save();
 
+    User sendEmail(User user);
 }

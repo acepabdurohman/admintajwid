@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Page</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <!-- BOOTSTRAP CORE STYLE  -->
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/bootstrap.css}"/>
+    <!-- FONT AWESOME ICONS  -->
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/font-awesome.css}"/>
+    <!-- CUSTOM STYLE  -->
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}"/>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <!-- FOOTER SECTION END-->
+    <!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+    <!-- CORE JQUERY SCRIPTS -->
+    <script th:src="@{/assets/js/jquery-1.11.1.js}"></script>
+    <!-- BOOTSTRAP SCRIPTS  -->
+    <script th:src="@{/assets/js/bootstrap.js}"></script>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="row">
+            <!--<div class="col-md-12">
+                <strong>Email: </strong>info@yourdomain.com
+                &nbsp;&nbsp;
+                <strong>Support: </strong>+90-897-678-44
+            </div>-->
+        </div>
+    </div>
+</header>
+<!-- HEADER END-->
+<div class="navbar navbar-inverse set-radius-zero">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" th:href="@{/}">
+                <h3 style="color: black">APLIKASI MANAGEMENT SOAL TAJWID</h3>
+            </a>
+        </div>
+
+        <div class="left-div">
+            <div class="user-settings-wrapper">
+                <ul class="nav">
+
+                    <li class="dropdown">
+
+                        <div class="dropdown-menu dropdown-settings">
+                            <div class="media">
+                                <a class="media-left" href="#">
+                                    <img th:src="@{/assets/img/64-64.jpg}" alt="" class="img-rounded"/>
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Jhon Deo Alex </h4>
+                                    <h5>Developer & Designer</h5>
+                                </div>
+                            </div>
+                            <hr/>
+                            <h5><strong>Personal Bio : </strong></h5>
+                            Anim pariatur cliche reprehen derit.
+                            <hr/>
+                            <a href="#" class="btn btn-info btn-sm">Full Profile</a>&nbsp; <a th:href="@{/login}"
+                                                                                              class="btn btn-danger btn-sm">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- LOGO HEADER END-->
+<section class="menu-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="navbar-collapse collapse ">
+                    <ul id="menu-top" class="nav navbar-nav navbar-right">
+                        <div class="dropdown2">
+                            <button class="dropbtn">DASHBOARD</button>
+                            <div class="dropdown2-content">
+                                <div th:each="kelas : ${kelases}">
+                                    <li class="licustom"><a th:text="'KELAS ' + ${kelas.nama}" th:href="@{/admin/quiz/kelas?id={id}
+                                    (id=${kelas.id})}"></a>
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown2">
+                            <button class="dropbtn">SISWA</button>
+                            <div class="dropdown2-content">
+                                <div th:each="kelas : ${kelases}">
+                                    <li class="licustom"><a th:text="'KELAS ' + ${kelas.nama}"
+                                                            th:href="@{/admin/siswa/kelas?id={id}(id=${kelas.id})}"></a>
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown2">
+                            <button class="dropbtn">SOAL</button>
+                            <div class="dropdown2-content">
+                                <div th:each="materi : ${materis}">
+                                    <li class="licustom"><a th:text="${materi.nama}"
+                                                            th:href="@{/admin/soal?idMateri={idMateri}(idMateri=${materi.id})}"></a>
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown2">
+                            <button class="dropbtn"><a th:href="@{/logout}">LOGOUT</a></button>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- MENU SECTION END-->
+<div class="content-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="page-head-line">FORM CREATE DATA SISWA</h4>
+            </div>
+        </div>
+        <div class="row">
+            <form th:object="${siswa}" th:action="@{/admin/siswa/save}" method="POST" accept-charset="UTF-8"
+                  enctype="multipart/form-data">
+                <div class="col-md-12 col-sm-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            Input Data Siswa
+                        </div>
+                        <div class="panel-body-mid">
+                            <table style="width: 50%">
+                                <tbody>
+                                <tr>
+                                    <td class="labelan">
+                                        <label>Kelas : </label>
+                                    </td>
+                                    <td class="inputan"><label th:text="${currentKelas.nama}"></label></td>
+                                </tr>
+                                <tr>
+                                    <td class="labelan"><label>Nomor Induk Siswa : </label></td>
+                                    <td class="inputan"><input type="text" class="form-control" name="nomorInduk"
+                                                               maxlength="17" th:field="*{nomorInduk}"
+                                                               placeholder="Masukan Nomor Induk Siswa"
+                                                               required></td>
+                                </tr>
+                                <tr>
+                                    <td class="labelan">
+                                        <label>Password : </label>
+                                    </td>
+                                    <td class="inputan"><input type="text" class="form-control" name="password"
+                                                               maxlength="8" th:field="*{password}"
+                                                               placeholder="Masukan Password"
+                                                               required></td>
+                                </tr>
+                                <tr>
+                                    <td class="labelan">
+                                        <label>Nama Lengkap : </label>
+                                    </td>
+                                    <td class="inputan"><input type="text" class="form-control" name="namaLengkap"
+                                                               maxlength="50" th:field="*{namaLengkap}"
+                                                               placeholder="Masukan Nama Lengkap Siswa"
+                                                               required></td>
+                                </tr>
+                                <tr>
+                                    <td class="labelan">
+                                        &nbsp;
+                                    </td>
+                                    <td class="inputan">
+                                        <button type="submit" class="btn btn-primary"
+                                                style="margin-bottom: 10px;"><i class="fa fa-floppy-o "></i>
+                                            Save
+                                        </button>
+                                        <button type="reset" class="btn btn-default"
+                                                style="margin-bottom: 10px;"><i class="fa fa-refresh"></i>
+                                            Reset
+                                        </button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- CONTENT-WRAPPER SECTION END-->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                &copy; 2015 YourCompany | By : <a href="http://www.designbootstrap.com/"
+                                                  target="_blank">DesignBootstrap</a>
+            </div>
+
+        </div>
+    </div>
+</footer>
+<!-- FOOTER SECTION END-->
+<!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+<!-- CORE JQUERY SCRIPTS -->
+<script th:src="@{/assets/js/jquery-1.11.1.js}"></script>
+<!-- BOOTSTRAP SCRIPTS  -->
+<script th:src="@{/assets/js/bootstrap.js}"></script>
+</body>
+</html>

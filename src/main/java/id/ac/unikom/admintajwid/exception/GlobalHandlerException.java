@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class GlobalHandlerException {
 
     @ExceptionHandler(DataNotFoundException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public ResponseTemplate handleDataNotFound(Exception e){
         e.printStackTrace();

@@ -23,11 +23,11 @@
 <header>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <!--<div class="col-md-12">
                 <strong>Email: </strong>info@yourdomain.com
                 &nbsp;&nbsp;
                 <strong>Support: </strong>+90-897-678-44
-            </div>
+            </div>-->
 
         </div>
     </div>
@@ -44,7 +44,7 @@
             <a class="navbar-brand" th:href="@{/}">
 
                 <!--<img th:src="@{/assets/img/logo.png}"/>-->
-                <h3>APLIKASI MANAGEMENT SOAL TAJWID</h3>
+                <h3 style="color: black">APLIKASI MANAGEMENT SOAL TAJWID</h3>
             </a>
 
         </div>
@@ -85,8 +85,39 @@
             <div class="col-md-12">
                 <div class="navbar-collapse collapse ">
                     <ul id="menu-top" class="nav navbar-nav navbar-right">
-                        <li><a class="menu-top-active" th:href="@{/}">Dashboard</a></li>
-                        <li><a th:href="@{/logout}">Logout</a></li>
+                        <div class="dropdown2">
+                            <button class="dropbtn">DASHBOARD</button>
+                            <div class="dropdown2-content">
+                                <div th:each="kelas : ${kelases}">
+                                    <li class="licustom"><a th:text="'KELAS ' + ${kelas.nama}" th:href="@{/admin/quiz/kelas?id={id}
+                                    (id=${kelas.id})}"></a>
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown2">
+                            <button class="dropbtn">SISWA</button>
+                            <div class="dropdown2-content">
+                                <div th:each="kelas : ${kelases}">
+                                    <li class="licustom"><a th:text="'KELAS ' + ${kelas.nama}"
+                                                            th:href="@{/admin/siswa/kelas?id={id}(id=${kelas.id})}"></a>
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown2">
+                            <button class="dropbtn">SOAL</button>
+                            <div class="dropdown2-content">
+                                <div th:each="materi : ${materis}">
+                                    <li class="licustom"><a th:text="${materi.nama}"
+                                                            th:href="@{/admin/soal?idMateri={idMateri}(idMateri=${materi.id})}"></a>
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown2">
+                            <button class="dropbtn"><a th:href="@{/logout}">LOGOUT</a></button>
+                        </div>
                     </ul>
                 </div>
             </div>
@@ -102,7 +133,8 @@
             </div>
         </div>
         <div class="row">
-            <form th:object="${soal}" th:action="@{/admin/soal/save}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
+            <form th:object="${soal}" th:action="@{/admin/soal/save}" method="POST" accept-charset="UTF-8"
+                  enctype="multipart/form-data">
                 <div class="col-md-6 col-sm-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -111,9 +143,24 @@
                         <div class="panel-body">
                             <input type="hidden" class="form-control" th:field="*{id}"/>
                             <input type="hidden" class="form-control" th:field="*{createdDate}" readonly="true"/>
-
+                            <!--<select class="form-control" th:field="*{materi.kelas.id}">
+                                <option th:each="kelas : ${kelasList}" th:value="${kelas.id}"
+                                        th:text="${kelas.nama}"></option>
+                            </select>-->
+                            <label>
+                                Materi :
+                            </label>
+                            <br/>
+                            <label th:text="${soal.getMateri().getNama()}"></label>
+                            <input type="hidden" th:field="*{materi.id}">
+                            <!--<select class="form-control" th:field="*{materi.id}">
+                                <option th:each="mtr : ${materiList}" th:value="${mtr.id}"
+                                        th:text="${mtr.nama}"></option>
+                            </select>-->
+                            <br/>
                             <label>Soal : </label>
-                            <textarea rows="5" class="form-control" th:field="*{pertanyaan}" placeholder="Masukan Soal"></textarea>
+                            <textarea rows="5" class="form-control" th:field="*{pertanyaan}"
+                                      placeholder="Masukan Soal"></textarea>
                             <h4 th:text="*{file}"></h4>
                             <input type="file" name="filePertanyaan"/>
                         </div>

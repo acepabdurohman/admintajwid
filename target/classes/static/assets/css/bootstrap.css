@@ -2527,6 +2527,17 @@ output {
   line-height: 1.42857143;
   color: #555;
 }
+
+.inputan{
+  padding-left: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+}
+.labelan{
+  padding-left: 5px;
+}
+
 .form-control {
   display: block;
   width: 100%;
@@ -2603,7 +2614,7 @@ input[type="search"] {
   }
 }
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 .radio,
 .checkbox {
@@ -5297,6 +5308,13 @@ a.list-group-item-danger.active:focus {
 .panel-body {
   padding: 15px;
 }
+
+.panel-body-mid {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30%;
+}
+
 .panel-heading {
   padding: 10px 15px;
   border-bottom: 1px solid transparent;
