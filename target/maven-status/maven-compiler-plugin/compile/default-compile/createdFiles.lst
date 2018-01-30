@@ -14,6 +14,7 @@ id\ac\unikom\admintajwid\service\StorageService.class
 id\ac\unikom\admintajwid\AdminTajwidApplication.class
 id\ac\unikom\admintajwid\dto\MailObject.class
 id\ac\unikom\admintajwid\service\KelasService.class
+id\ac\unikom\admintajwid\util\DateConverter.class
 id\ac\unikom\admintajwid\dto\MateriList.class
 id\ac\unikom\admintajwid\repository\SoalRepository.class
 id\ac\unikom\admintajwid\exception\GlobalHandlerException.class

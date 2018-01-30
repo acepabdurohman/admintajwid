@@ -22,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.text.ParseException;
 import java.util.List;
 
 @Controller
@@ -114,7 +115,7 @@ public class SiswaController {
     @PostMapping(value = "/siswa/api/score")
     @ResponseStatus(HttpStatus.CREATED)
     @ResponseBody
-    public ResponseTemplate saveScore(@RequestBody SiswaScore siswaScore){
+    public ResponseTemplate saveScore(@RequestBody SiswaScore siswaScore) throws ParseException{
         quizService.save(siswaScore);
         return new ResponseTemplate(200, "Success", null);
     }
