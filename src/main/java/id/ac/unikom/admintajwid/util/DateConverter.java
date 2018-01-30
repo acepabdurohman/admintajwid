@@ -24,7 +24,6 @@ public class DateConverter {
         TimeZone gmtTime = TimeZone.getTimeZone(gmt);
         gmtFormat.setTimeZone(gmtTime);
         String dateGmt = gmtFormat.format(date);
-        Date dateConvert = new SimpleDateFormat().parse(dateGmt);
-        return dateConvert;
+        return new SimpleDateFormat().parse(dateGmt);
     }
 }
