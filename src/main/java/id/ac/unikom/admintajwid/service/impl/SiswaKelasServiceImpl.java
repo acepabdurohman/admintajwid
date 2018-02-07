@@ -25,8 +25,8 @@ public class SiswaKelasServiceImpl implements SiswaKelasService {
     private KelasRepository kelasRepository;
 
     @Override
-    public List<SiswaKelas> findByIdKelas(Integer id) {
-        return siswaKelasRepository.findByKelas_Id(id);
+    public List<SiswaKelas> findByIdKelasAndStatus(Integer id, boolean status) {
+        return siswaKelasRepository.findByKelas_IdAndSiswa_Status(id, status);
     }
 
     @Override
@@ -40,6 +40,7 @@ public class SiswaKelasServiceImpl implements SiswaKelasService {
         siswa.setNomorInduk(nomorInduk);
         siswa.setNamaLengkap(namaLengkap);
         siswa.setPassword(password);
+        siswa.setStatus(true);
         Integer idKelas = siswaKelas.getKelas().getId();
         Kelas kelas = kelasRepository.findOne(idKelas);
         siswaKelas.setSiswa(siswa);
@@ -51,7 +52,7 @@ public class SiswaKelasServiceImpl implements SiswaKelasService {
     }
 
     @Override
-    public SiswaKelas findById(Integer id) {
-        return siswaKelasRepository.findOne(id);
+    public SiswaKelas findByIdAndStatus(Integer id, boolean status) {
+        return siswaKelasRepository.findByIdAndSiswa_Status(id, status);
     }
 }

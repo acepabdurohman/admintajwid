@@ -45,7 +45,7 @@ public class SiswaController {
     public ModelAndView getAll(@RequestParam("id") Integer id) {
         ModelAndView modelAndView = new ModelAndView();
         kelas = kelasService.findById(id);
-        List<SiswaKelas> siswaKelases = siswaKelasService.findByIdKelas(kelas.getId());
+        List<SiswaKelas> siswaKelases = siswaKelasService.findByIdKelasAndStatus(kelas.getId(), true);
         modelAndView.addObject("siswaKelases", siswaKelases);
         modelAndView.addObject("kls", kelas);
         modelAndView.addObject("kelases", menuDropdownList.findAllKelas());
@@ -69,6 +69,7 @@ public class SiswaController {
 
     @PostMapping("/admin/siswa/save")
     public String save(@ModelAttribute("kelas") @Valid Siswa siswa, RedirectAttributes attributes) {
+        siswa.setStatus(true);
         siswaService.save(siswa, kelas);
         attributes.addFlashAttribute("saveResult", "success");
         return "redirect:/admin/siswa/kelas?id=" + kelas.getId();
@@ -86,14 +87,14 @@ public class SiswaController {
     public String findById(@PathVariable("action") String action, @RequestParam("idSiswaKelas") Integer idSiswaKelas, ModelMap modelMap,
                                  RedirectAttributes attributes) {
         if (action.equals("edit")) {
-            SiswaKelas siswaKelas = siswaKelasService.findById(idSiswaKelas);
+            SiswaKelas siswaKelas = siswaKelasService.findByIdAndStatus(idSiswaKelas, true);
             modelMap.addAttribute("siswaKelas", siswaKelas);
             modelMap.addAttribute("kelasList", kelasService.findAll());
             modelMap.addAttribute("kelases", menuDropdownList.findAllKelas());
             modelMap.addAttribute("materis", menuDropdownList.findAllMateri());
             return "/siswa/edit";
         } else {
-            SiswaKelas siswaKelas = siswaKelasService.findById(idSiswaKelas);
+            SiswaKelas siswaKelas = siswaKelasService.findByIdAndStatus(idSiswaKelas, true);
             Siswa siswa = siswaKelas.getSiswa();
             siswaService.delete(siswa);
             attributes.addFlashAttribute("deleteResult", "success");
@@ -105,7 +106,7 @@ public class SiswaController {
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public ResponseTemplate getLoginSiswaKelas(@RequestBody SiswaLogin siswaLogin) throws DataNotFoundException{
-        Siswa siswa = siswaService.findByUsernameAndPassword(siswaLogin.getUsername(), siswaLogin.getPassword());
+        Siswa siswa = siswaService.findByUsernameAndPasswordAndStatus(siswaLogin.getUsername(), siswaLogin.getPassword(), true);
         if(siswa == null){
             throw new DataNotFoundException();
         }

@@ -9,7 +9,11 @@ import java.util.List;
 
 public interface QuizService {
 
-    List<Quiz> findByIdKelas(Kelas kelas);
+    List<Quiz> findByIdKelasAndStatusSiswa(Kelas kelas, boolean status);
+
+    Quiz findOne(Integer id);
 
     void save(SiswaScore siswaScore) throws ParseException;
+
+    void delete(Quiz quiz);
 }

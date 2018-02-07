@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface SiswaKelasRepository extends CrudRepository<SiswaKelas, Integer> {
 
-    List<SiswaKelas> findByKelas_Id(Integer id);
+    List<SiswaKelas> findByKelas_IdAndSiswa_Status(Integer id, boolean status);
+
+    SiswaKelas findByIdAndSiswa_Status(Integer id, boolean status);
 
 }

@@ -25,10 +25,15 @@
     <script th:src="@{/assets/js/bootstrap.js}"></script>
     <link rel="stylesheet" type="text/css" th:href="@{//cdn.datatables.net/1.10.16/css/jquery.dataTables.css}">
     <script type="text/javascript" charset="utf8" th:src="@{//cdn.datatables.net/1.10.16/js/jquery.dataTables.js}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
-
+<div th:if="${deleteResult eq 'success'}">
+    <script>
+        sweetAlert("Berhasil", "Data berhasil dihapus", "success");
+    </script>
+</div>
 <header>
     <div class="container">
         <div class="row">
@@ -162,6 +167,7 @@
                                     <th>Nama</th>
                                     <th>Materi</th>
                                     <th>Nilai</th>
+                                    <th style="text-align: center">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -175,6 +181,11 @@
                                     <td th:text="${quiz.getSiswaKelas().getSiswa().getNamaLengkap()}"></td>
                                     <td th:text="${quiz.getMateri().getNama()}"></td>
                                     <td th:text="${quiz.getNilai()}"></td>
+                                    <td align="center">
+                                        <a th:href="@{/admin/quiz/delete?id={id}(id=${quiz.getId()})}"
+                                           onclick="return confirm('Apakah anda yakin akan menghapus data ?');">
+                                            <span class="glyphicon glyphicon-trash"></span></a>
+                                    </td>
                                 </tr>
                                 </tbody>
                             </table>

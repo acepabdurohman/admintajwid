@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface QuizRepository extends CrudRepository<Quiz, Integer> {
 
-    @Query("select q from Quiz q where q.siswaKelas.kelas.id = :idKelas")
-    List<Quiz> findByIdKelas(@Param("idKelas") Integer idKelas);
+    @Query("select q from Quiz q where q.siswaKelas.kelas.id = :idKelas and q.siswaKelas.siswa.status = :status")
+    List<Quiz> findByIdKelasAndStatusSiswa(@Param("idKelas") Integer idKelas, @Param("status") boolean status);
 
 }

@@ -3,6 +3,8 @@ package id.ac.unikom.admintajwid.service.impl;
 import id.ac.unikom.admintajwid.model.Kelas;
 import id.ac.unikom.admintajwid.model.Siswa;
 import id.ac.unikom.admintajwid.model.SiswaKelas;
+import id.ac.unikom.admintajwid.repository.KelasRepository;
+import id.ac.unikom.admintajwid.repository.SiswaKelasRepository;
 import id.ac.unikom.admintajwid.repository.SiswaRepository;
 import id.ac.unikom.admintajwid.service.SiswaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,10 @@ public class SiswaServiceImpl implements SiswaService {
 
     @Autowired
     private SiswaRepository siswaRepository;
+    @Autowired
+    private KelasRepository kelasRepository;
+    @Autowired
+    private SiswaKelasRepository siswaKelasRepository;
 
     @Override
     @Transactional
@@ -31,13 +37,14 @@ public class SiswaServiceImpl implements SiswaService {
     }
 
     @Override
+    @Transactional
     public void delete(Siswa siswa) {
         siswaRepository.delete(siswa.getId());
     }
 
     @Override
-    public Siswa findByUsernameAndPassword(String username, String password) {
-        Siswa siswa = siswaRepository.findByNomorIndukAndPassword(username, password);
+    public Siswa findByUsernameAndPasswordAndStatus(String username, String password, boolean status) {
+        Siswa siswa = siswaRepository.findByNomorIndukAndPasswordAndStatus(username, password, status);
         return siswa;
     }
 }

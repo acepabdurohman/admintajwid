@@ -34,6 +34,8 @@ public class Siswa {
     @OneToMany(mappedBy = "siswa", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<SiswaKelas> siswaKelases;
 
+    private boolean status;
+
     public Integer getId() {
         return id;
     }
@@ -72,5 +74,13 @@ public class Siswa {
 
     public void setSiswaKelases(Set<SiswaKelas> siswaKelases) {
         this.siswaKelases = siswaKelases;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }

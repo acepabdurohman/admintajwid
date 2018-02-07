@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: id.ac.unikom.admintajwid.AdminTajwidApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 35.438 sec - in id.ac.unikom.admintajwid.AdminTajwidApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 41.792 sec - in id.ac.unikom.admintajwid.AdminTajwidApplicationTests

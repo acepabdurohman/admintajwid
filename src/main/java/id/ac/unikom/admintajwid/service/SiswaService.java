@@ -14,5 +14,5 @@ public interface SiswaService {
 
     void delete(Siswa siswa);
 
-    Siswa findByUsernameAndPassword(String username, String password);
+    Siswa findByUsernameAndPasswordAndStatus(String username, String password, boolean status);
 }

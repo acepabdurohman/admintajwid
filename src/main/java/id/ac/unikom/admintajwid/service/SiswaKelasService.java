@@ -8,10 +8,10 @@ import java.util.List;
 
 public interface SiswaKelasService {
 
-    List<SiswaKelas> findByIdKelas(Integer id);
+    List<SiswaKelas> findByIdKelasAndStatus(Integer id, boolean status);
 
     void save(SiswaKelas siswaKelas);
 
-    SiswaKelas findById(Integer id);
+    SiswaKelas findByIdAndStatus(Integer id, boolean status);
 
 }

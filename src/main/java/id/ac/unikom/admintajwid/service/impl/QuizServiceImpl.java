@@ -34,15 +34,13 @@ public class QuizServiceImpl implements QuizService {
     private DateConverter dateConverter;
 
     @Override
-    public List<Quiz> findByIdKelas(Kelas kelas) {
-        List<Quiz> quizzes = quizRepository.findByIdKelas(kelas.getId());
-        /*quizzes.forEach(quiz -> {
-            try {
-                quiz.setTanggal(dateConverter.changeFormat(quiz.getTanggal()));
-            } catch (java.text.ParseException e) {
-                e.printStackTrace();
-            }
-        });*/
+    public Quiz findOne(Integer id) {
+        return quizRepository.findOne(id);
+    }
+
+    @Override
+    public List<Quiz> findByIdKelasAndStatusSiswa(Kelas kelas, boolean status) {
+        List<Quiz> quizzes = quizRepository.findByIdKelasAndStatusSiswa(kelas.getId(), status);
         return quizzes;
     }
 
@@ -57,5 +55,10 @@ public class QuizServiceImpl implements QuizService {
         quiz.setTanggal(currentDate);
         quiz.setNilai(siswaScore.getNilai());
         quizRepository.save(quiz);
+    }
+
+    @Override
+    public void delete(Quiz quiz) {
+        quizRepository.delete(quiz);
     }
 }
