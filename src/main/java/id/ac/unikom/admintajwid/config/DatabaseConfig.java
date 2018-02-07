@@ -11,6 +11,12 @@ import org.springframework.context.annotation.Profile;
 import javax.sql.DataSource;
 
 @Configuration
-public class DatabaseConfig extends AbstractCloudConfig{
-
+@Profile("heroku")
+public class DatabaseConfig {
+    @Bean
+    @Primary
+    @ConfigurationProperties(prefix = "spring.datasource")
+    public DataSource dataSource() {
+        return DataSourceBuilder.create().build();
+    }
 }

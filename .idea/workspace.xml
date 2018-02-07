@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b26d726e-bcbe-461d-b26c-6edb57efd372" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/config/DatabaseConfig.java" afterPath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/config/DatabaseConfig.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -25,12 +25,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatabaseConfig.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DatabaseConfig.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/config/DatabaseConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="221">
+              <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+              <folding>
+                <element signature="e#689#690#0" expanded="true" />
+                <element signature="e#746#747#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -45,7 +48,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
@@ -208,10 +211,10 @@
         <option value="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/service/impl/SiswaServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/config/WebMvcConfig.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/config/DatabaseConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/config/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application-heroku.yml" />
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/config/DatabaseConfig.java" />
       </list>
     </option>
   </component>
@@ -588,12 +591,12 @@
       <workItem from="1517992336264" duration="28000" />
       <workItem from="1517992411704" duration="93000" />
       <workItem from="1517997850629" duration="65000" />
-      <workItem from="1517998531038" duration="3694000" />
+      <workItem from="1517998531038" duration="3932000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="445033000" />
+    <option name="totallyTimeSpent" value="445271000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -953,22 +956,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/config/DatabaseConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/config/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/model/Authority.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1004,6 +991,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="56" lean-forward="false" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application-heroku.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1012,11 +1007,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/config/SecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="56" lean-forward="false" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
+        <state relative-caret-position="5">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/config/DatabaseConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+          <folding>
+            <element signature="e#689#690#0" expanded="true" />
+            <element signature="e#746#747#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
