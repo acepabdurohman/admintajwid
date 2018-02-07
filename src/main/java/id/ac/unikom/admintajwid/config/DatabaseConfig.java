@@ -12,5 +12,5 @@ import javax.sql.DataSource;
 
 @Configuration
 public class DatabaseConfig extends AbstractCloudConfig{
-    
+
 }
