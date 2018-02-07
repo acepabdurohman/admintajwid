@@ -12,9 +12,5 @@ import javax.sql.DataSource;
 
 @Configuration
 public class DatabaseConfig extends AbstractCloudConfig{
-
-    @Bean
-    public DataSource inventoryDataSource() {
-        return connectionFactory().dataSource("inventory-db-service");
-    }
+    
 }

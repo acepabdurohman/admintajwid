@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b26d726e-bcbe-461d-b26c-6edb57efd372" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/admin-tajwid-0.0.1-SNAPSHOT.jar.original" afterPath="$PROJECT_DIR$/target/admin-tajwid-0.0.1-SNAPSHOT.jar.original" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin-tajwid.iml" afterPath="$PROJECT_DIR$/admin-tajwid.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/config/DatabaseConfig.java" afterPath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/config/DatabaseConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/config/WebMvcConfig.java" afterPath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/config/WebMvcConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/controller/QuizController.java" afterPath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/controller/QuizController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/controller/SiswaController.java" afterPath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/controller/SiswaController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/model/Siswa.java" afterPath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/model/Siswa.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/repository/QuizRepository.java" afterPath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/repository/QuizRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/repository/SiswaKelasRepository.java" afterPath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/repository/SiswaKelasRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/repository/SiswaRepository.java" afterPath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/repository/SiswaRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/service/QuizService.java" afterPath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/service/QuizService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/service/SiswaKelasService.java" afterPath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/service/SiswaKelasService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/service/SiswaService.java" afterPath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/service/SiswaService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/service/impl/QuizServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/service/impl/QuizServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/service/impl/SiswaKelasServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/service/impl/SiswaKelasServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/service/impl/SiswaServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/service/impl/SiswaServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/index.html" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-id.ac.unikom.admintajwid.AdminTajwidApplicationTests.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-id.ac.unikom.admintajwid.AdminTajwidApplicationTests.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/id.ac.unikom.admintajwid.AdminTajwidApplicationTests.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/id.ac.unikom.admintajwid.AdminTajwidApplicationTests.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -51,12 +28,9 @@
       <file leaf-file-name="DatabaseConfig.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/config/DatabaseConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-              <folding>
-                <element signature="e#635#636#0" expanded="true" />
-                <element signature="e#712#713#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="102">
+              <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -196,8 +170,8 @@
         <option value="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/repository/SiswaRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/service/impl/SiswaServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/config/WebMvcConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/config/DatabaseConfig.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/config/DatabaseConfig.java" />
       </list>
     </option>
   </component>
@@ -617,12 +591,12 @@
       <workItem from="1517992336264" duration="28000" />
       <workItem from="1517992411704" duration="93000" />
       <workItem from="1517997850629" duration="65000" />
-      <workItem from="1517998531038" duration="752000" />
+      <workItem from="1517998531038" duration="1350000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="442091000" />
+    <option name="totallyTimeSpent" value="442689000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1041,12 +1015,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/id/ac/unikom/admintajwid/config/DatabaseConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-          <folding>
-            <element signature="e#635#636#0" expanded="true" />
-            <element signature="e#712#713#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
