@@ -3,4 +3,4 @@ spring:
     url : jdbc:postgresql://ec2-54-235-66-81.compute-1.amazonaws.com:5432/ddue8hpqflheig
     username: pxrzjtkmdmkckv
     password: 70640f69833d9df2cbb034df6cdd54bb8e87f211bc637a084baa29f92bc562df
-    #driver-class-name: org.postgresql.Driver
+    driver-class-name: org.postgresql.Driver
