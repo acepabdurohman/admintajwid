@@ -44,6 +44,7 @@ public class User implements UserDetails{
     private Set<Authority> roles;*/
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+
     private Set<Authority> authorities;
 
     @Override
